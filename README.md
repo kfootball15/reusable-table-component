@@ -37,7 +37,7 @@ npm install -g live-reload
 
 navigate to parent directory of this folder in terminal
 
-live-reload latch_challenge
+live-reload reusable-table-component
 
 ```
 
