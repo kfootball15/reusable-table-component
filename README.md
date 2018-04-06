@@ -17,17 +17,17 @@ Thank you so much for taking a glance at this!
 
 
 ## Challenge:
-### Using data received from a network request, render a reusable table component that 
+Using data received from a network request, render a reusable table component that 
   dynamically generates columns based on the number of attributes each data object
   has, and generates a requested number of rows in the table per page.
 
-###Should Also include
-    + Pagination buttons
+### Should Also include
+    Pagination buttons
       - Buttons that make backend requests for the next set of data (including first and last buttons)
-    + Sorts for each of the columns   
+    Sorts for each of the columns   
       - First click sorts the row, second click reverses the order
       - Clicks should make requests to the backend for fresh data;
-    + Search Input
+    Search Input
       - A search input that lets users search for information in any of the fields
       - Submiting this should make calls to the backend for the currently sorted row (if there is one);
 
