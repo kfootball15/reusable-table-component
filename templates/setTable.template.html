@@ -1,0 +1,31 @@
+<div class="header-container">
+  <form 
+    name="fetchForm" 
+    ng-submit="$ctrl.fetchdata({numberOfEntries: $ctrl.numberOfEntries, datatype: $ctrl.datatype})"
+    required
+    novalidate="">
+    
+    <div>
+      <label>Type of Data:</label>
+      <select 
+        name="dataType" 
+        ng-init="$ctrl.datatype = './mockJson/users.json'"
+        ng-model="$ctrl.datatype">
+        <option 
+          value="./mockJson/users.json">Users</option>
+        <option 
+          value="./mockJson/locks.json">Locks</option>
+      </select>
+    </div>
+    
+    <div>
+      <label>Number of Entries per page: </label>
+              <input 
+                type="number" 
+                placeholder="#" 
+                name="numOfUsers" 
+                ng-model="$ctrl.numberOfEntries" required="" />
+      <button type="submit" ng-disabled="fetchForm.$invalid">Submit</button>
+    </div>
+  </form>
+</div>

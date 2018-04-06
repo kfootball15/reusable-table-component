@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <!--Styling-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Scripts-->
+    <script data-require="angular.js@1.6.6" data-semver="1.6.6" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="mainCtrl">
+    <div>
+      <h1>Reusable Table Component Example</h1>
+      <set-table
+        fetchdata="fetchData(numberOfEntries, datatype)"></set-table>
+      <general-table 
+        ng-show="table" 
+        table="table" 
+        gotopage="goToPage(pagenum)" 
+        setsorttype="setSortType(sortType)" 
+        search="search(searchTerm)"
+        reset="reset()"></general-table>
+    </div>
+  </body>
+
+</html>

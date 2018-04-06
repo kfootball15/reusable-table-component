@@ -1,0 +1,46 @@
+
+<div class="table-container">
+  <h2>General Table</h2>
+  <form 
+    name="searchForm"
+    id = "searchForm"
+    ng-submit="$ctrl.search({searchTerm: $ctrl.searchTerm})"
+    novalidate
+    >
+      <input type="text" name="search" ng-model="$ctrl.searchTerm" />
+      <button type="submit">Search</button>
+      <button ng-click="$ctrl.resetData()">Reset</button>
+  </form>
+  <div class="pageNumber-container">
+    <a 
+      href="#" 
+      class="pageNumber"
+      ng-repeat="pageNumber in $ctrl.table.numPages track by $index"
+      ng-class="{'current-page': $index+1 === $ctrl.table.currentPage}"
+      ng-click="$ctrl.gotopage({pagenum:$index+1})">{{$index+1}}</a>
+  </div>
+  <table ng-hide="$ctrl.table.data.err">
+    <tr>
+      <td ng-repeat="(key, value) in $ctrl.table.data[0]">
+          {{ key }} 
+          <button ng-click="$ctrl.setsorttype({sortType:key})">
+            Sort <span ng-show="$ctrl.table.currentSortType === key">{{$ctrl.table.sortReverse ? "&uarr;" : "&darr;"}}</span>
+          </button>
+      </td>
+    </tr>
+    <tr ng-repeat="element in $ctrl.table.data">
+      <td ng-repeat="(key, value) in element track by $index">{{ value }}</td>
+    </tr>
+  </table>
+  
+  <div ng-show="$ctrl.table.data.err" class="error">
+    <p>Plnkr seems to error out randomly when making Get Requests to local .json files
+    <br>
+    <br>
+    Try refreshing the window with that <span>green</span> button in the right corner.
+    </p>
+    <p>
+    Error: {{$ctrl.table.data.err}}
+    </p>
+  </div>
+</div>

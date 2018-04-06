@@ -1,0 +1,45 @@
+/* Styles go here */
+
+table {
+  position: relative;
+  margin: 0 auto;
+}
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.current-page{
+  font-size: 24px;
+
+}
+
+.table-container, .header-container, h1{
+  width: 100%;
+  text-align: center;
+}
+
+.pageNumber{
+  margin: 5px;
+  display: inline-block;
+}
+
+.pageNumber-container{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.error {
+  color: red;
+}
+.error span {
+  color: green;
+}
